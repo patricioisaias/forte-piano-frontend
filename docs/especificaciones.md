@@ -1221,7 +1221,7 @@ localStorage  → persistencia local
 # 34. Arquitectura final
 
 ```text
-                         NEXO GAMING
+                         Forte & Piano
 
                             Flask
                  Servidor web minimalista
