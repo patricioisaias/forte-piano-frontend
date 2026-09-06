@@ -115,13 +115,18 @@ function renderizarCarrito() {
         const subtotal = producto.precio * item.cantidad;
 
         const fila = document.createElement("div");
-        fila.className = "row align-items-center bg-forte-panel rounded p-3 mb-3 g-3";
+        fila.className = "bg-forte-panel rounded p-3 mb-3";
         fila.innerHTML =
+            '<div class="row align-items-center g-3">' +
             '<div class="col-3 col-md-2">' +
+            '<a href="/producto-detalle?codigo=' + producto.codigo + '">' +
             '<img src="' + rutaImagenProducto(producto) + '" class="img-fluid rounded" alt="' + producto.nombre + '">' +
+            '</a>' +
             '</div>' +
             '<div class="col-9 col-md-4">' +
-            '<h3 class="h6 mb-1">' + producto.nombre + '</h3>' +
+            '<h3 class="h6 mb-1">' +
+            '<a href="/producto-detalle?codigo=' + producto.codigo + '" class="text-decoration-none text-light">' + producto.nombre + '</a>' +
+            '</h3>' +
             '<p class="small text-muted mb-0">' + formatearPrecio(producto.precio) + ' c/u</p>' +
             '</div>' +
             '<div class="col-6 col-md-3 d-flex align-items-center gap-2">' +
@@ -134,6 +139,7 @@ function renderizarCarrito() {
             '</div>' +
             '<div class="col-2 col-md-1 text-end">' +
             '<button class="btn btn-outline-danger btn-sm" onclick="eliminarDelCarrito(\'' + producto.codigo + '\')"><i class="bi bi-trash"></i></button>' +
+            '</div>' +
             '</div>';
 
         contenedor.appendChild(fila);
