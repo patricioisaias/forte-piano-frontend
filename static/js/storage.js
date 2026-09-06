@@ -98,21 +98,19 @@ function inicializarDatos() {
         ]);
     }
 
+    // TEMPORAL: forzar recarga de productos con imagenes reales (borrar despues)
+    localStorage.removeItem(FORTEPIANO_KEYS.productos);
+
     if (!localStorage.getItem(FORTEPIANO_KEYS.productos)) {
         guardarColeccion(FORTEPIANO_KEYS.productos, [
-            { codigo: "AC-005", nombre: "Soporte de Teclado Tijera", descripcion: "Atril de metal resistente con altura ajustable, compatible con la mayoría de pianos digitales y teclados.", precio: 17990, stock: 10, stockCritico: 3, categoriaId: 4, imagen: "productos/soporte.svg", estado: "Activo" },
-            { codigo: "PD-006", nombre: "Roland FP-30X", descripcion: "Piano digital portátil de gran rendimiento con motor de sonido SuperNATURAL y conexión Bluetooth.", precio: 699990, stock: 25, stockCritico: 5, categoriaId: 2, imagen: "productos/roland-fp30x.svg", estado: "Activo" },
-            { codigo: "AD-001", nombre: "Funda impermeable", descripcion: "Funda acolchada para proteger tu piano del polvo y la humedad.", precio: 25000, stock: 15, stockCritico: 4, categoriaId: 4, imagen: "productos/funda.svg", estado: "Activo" },
-            { codigo: "PA-001", nombre: "Piano Yamaha U1", descripcion: "Piano acústico vertical de alta calidad, ideal para estudiantes avanzados y profesionales.", precio: 3299000, stock: 5, stockCritico: 2, categoriaId: 1, imagen: "productos/yamaha-u1.svg", estado: "Activo" },
-            { codigo: "PD-001", nombre: "Yamaha P-45", descripcion: "Piano digital de entrada con 88 teclas contrapesadas y tecnología Pure CF Sampling.", precio: 459990, stock: 30, stockCritico: 5, categoriaId: 2, imagen: "productos/yamaha-p45.svg", estado: "Activo" },
-            { codigo: "AD-002", nombre: "Banco de piano acolchado", descripcion: "Banco ajustable en altura con asiento acolchado para mayor comodidad.", precio: 45000, stock: 20, stockCritico: 4, categoriaId: 4, imagen: "productos/banco.svg", estado: "Activo" },
-            { codigo: "AC-001", nombre: "Atril de partituras", descripcion: "Atril plegable de metal con altura ajustable.", precio: 12990, stock: 15, stockCritico: 3, categoriaId: 4, imagen: "productos/atril.svg", estado: "Activo" },
-            { codigo: "SY-001", nombre: "Sintetizador Korg Volca FM", descripcion: "Sintetizador FM compacto con 61 teclas y 32 voces de polifonía.", precio: 189990, stock: 12, stockCritico: 3, categoriaId: 3, imagen: "productos/volca-fm.svg", estado: "Activo" },
-            { codigo: "AD-003", nombre: "Pedal de sustain", descripcion: "Pedal conmutable conmutable para pianos digitales.", precio: 15000, stock: 25, stockCritico: 5, categoriaId: 4, imagen: "productos/pedal.svg", estado: "Activo" },
-            { codigo: "PA-002", nombre: "Piano Kawai K-300", descripcion: "Piano vertical profesional con acción Millennium III y sistema Silent opcional.", precio: 4599000, stock: 3, stockCritico: 1, categoriaId: 1, imagen: "productos/kawai-k300.svg", estado: "Activo" },
-            { codigo: "PD-002", nombre: "Casio PX-770", descripcion: "Piano digital de mueble con 88 teclas contrapesadas y tecnología AiR Sound.", precio: 659990, stock: 18, stockCritico: 4, categoriaId: 2, imagen: "productos/casio-px770.svg", estado: "Activo" },
-            { codigo: "AM-001", nombre: "Amplificador Marshall MG10", descripcion: "Amplificador de práctica de 10W con dos canales y efectos integrados.", precio: 129990, stock: 8, stockCritico: 2, categoriaId: 5, imagen: "productos/marshall-mg10.svg", estado: "Activo" },
-            { codigo: "PA-003", nombre: "Piano Steinway & Sons Model O", descripcion: "Piano de cola de concierto con sonido rico y resonancia excepcional.", precio: 32499000, stock: 1, stockCritico: 1, categoriaId: 1, imagen: "productos/steinway-model-o.svg", estado: "Activo" }
+            { codigo: "AC-005", nombre: "Soporte de Teclado Doble", descripcion: "Soporte de teclado tipo tijera de metal resistente con altura ajustable, compatible con la mayoria de pianos digitales y teclados.", precio: 17990, stock: 10, stockCritico: 3, categoriaId: 4, imagen: "productos/prod-soporte-teclado-doble.webp", estado: "Activo" },
+            { codigo: "PD-006", nombre: "Yamaha Arius YDP-146 Rosewood", descripcion: "Piano digital de mueble con teclas contrapesadas GH3, sonido Pure CF Sampling y acabado elegante en palisandro.", precio: 699990, stock: 25, stockCritico: 5, categoriaId: 2, imagen: "productos/prod-piano-yamaha-arius-ydp-146-rosewood.webp", estado: "Activo" },
+            { codigo: "AD-001", nombre: "Funda GTSA Key 61 con Ruedas", descripcion: "Funda acolchada con ruedas para teclados de 61 teclas, protege tu instrumento del polvo y la humedad durante el transporte.", precio: 25000, stock: 15, stockCritico: 4, categoriaId: 4, imagen: "productos/prod-funda-gtsa-key-61-ruedas.webp", estado: "Activo" },
+            { codigo: "PA-001", nombre: "Piano Yamaha B1", descripcion: "Piano acustico vertical de la serie B, ideal para estudiantes y espacios reducidos. Sonido brillante y mecanismo fiable.", precio: 3299000, stock: 5, stockCritico: 2, categoriaId: 1, imagen: "productos/prod-piano-yamaha-b10.webp", estado: "Activo" },
+            { codigo: "PD-001", nombre: "Yamaha P-45 Negro", descripcion: "Piano digital de entrada con 88 teclas contrapesadas GHS y tecnologia Pure CF Sampling. Compacto y portatil.", precio: 459990, stock: 30, stockCritico: 5, categoriaId: 2, imagen: "productos/prod-piano-yamaha-p45-negro.webp", estado: "Activo" },
+            { codigo: "SY-001", nombre: "Nord Electro 6D 61", descripcion: "Teclado de escenario premium con 61 teclas, motores de piano, organo y sintetizador. Sonido profesional de referencia.", precio: 1899990, stock: 12, stockCritico: 3, categoriaId: 3, imagen: "productos/prod-teclado-nord-electro-6d-61.jpg", estado: "Activo" },
+            { codigo: "AD-003", nombre: "Pedal de Sustain SP-34", descripcion: "Pedal de sustain estilo piano con accion progresiva, compatible con la mayoria de pianos y teclados digitales.", precio: 15000, stock: 25, stockCritico: 5, categoriaId: 4, imagen: "productos/prod-pedal-sp-34.webp", estado: "Activo" },
+            { codigo: "PD-002", nombre: "Donner DDP-80 Digital Piano", descripcion: "Piano digital compacto de 88 teclas contrapesadas con 128 voces de polifonia y diseno moderno en madera.", precio: 659990, stock: 18, stockCritico: 4, categoriaId: 2, imagen: "productos/prod-piano-donner-ddp-80.webp", estado: "Activo" }
         ]);
     }
 

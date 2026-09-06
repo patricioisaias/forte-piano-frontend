@@ -28,15 +28,19 @@ function crearTarjetaProducto(producto) {
 
     columna.innerHTML =
         '<div class="card h-100 card-forte-hover">' +
+        '<a href="/producto-detalle?codigo=' + producto.codigo + '">' +
         '<img src="' + rutaImagenProducto(producto) + '" class="card-img-top" alt="' + producto.nombre + '">' +
-        '<div class="card-body d-flex flex-column">' +
+        '</a>' +
+        '<div class="card-body d-flex flex-column" style="cursor: pointer;" onclick="window.location.href=\'/producto-detalle?codigo=' + producto.codigo + '\'">' +
         '<span class="badge bg-secondary align-self-start mb-2">' + obtenerNombreCategoria(producto.categoriaId) + '</span>' +
-        '<h3 class="h6">' + producto.nombre + '</h3>' +
+        '<h3 class="h6">' +
+        '<a href="/producto-detalle?codigo=' + producto.codigo + '" class="text-decoration-none text-light">' + producto.nombre + '</a>' +
+        '</h3>' +
         '<p class="fw-bold text-accent mb-2">' + formatearPrecio(producto.precio) + '</p>' +
         '<p class="small text-muted mb-3">' + (agotado ? '<span class="badge bg-danger">Sin stock</span>' : 'Stock: ' + producto.stock) + '</p>' +
         '<div class="mt-auto d-flex gap-2">' +
-        '<a href="/producto-detalle?codigo=' + producto.codigo + '" class="btn btn-outline-accent btn-sm flex-fill">Ver detalle</a>' +
-        '<button class="btn btn-accent btn-sm flex-fill" ' + (agotado ? "disabled" : "") + ' onclick="agregarAlCarrito(\'' + producto.codigo + '\', 1)"><i class="bi bi-cart-plus"></i></button>' +
+        '<a href="/producto-detalle?codigo=' + producto.codigo + '" class="btn btn-outline-accent btn-sm flex-fill" onclick="event.stopPropagation();">Ver detalle</a>' +
+        '<button class="btn btn-accent btn-sm flex-fill" ' + (agotado ? "disabled" : "") + ' onclick="event.stopPropagation(); agregarAlCarrito(\'' + producto.codigo + '\', 1)"><i class="bi bi-cart-plus"></i></button>' +
         '</div>' +
         '</div>' +
         '</div>';
