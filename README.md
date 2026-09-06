@@ -23,7 +23,7 @@ Para ejecutar este proyecto en tu entorno local, sigue estos sencillos pasos:
 Abre tu terminal, navega hasta la carpeta raíz del proyecto (`forte-piano-frontend`) y asegúrate de tener Flask instalado. Puedes instalarlo ejecutando:
 
 ```bash
-pip install flask
+pip install flaskpip install flask
 ```
 
 ### 3. Ejecutar el servidor

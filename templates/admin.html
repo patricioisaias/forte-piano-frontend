@@ -66,10 +66,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const sesion = obtenerSesion();
     document.getElementById("bienvenidaAdmin").textContent = "Bienvenido, " + sesion.nombre + " (" + obtenerNombreRol(sesion.rolId) + ")";
 
-    const productos = obtenerColeccion(NEXO_KEYS.productos);
+    const productos = obtenerColeccion(FORTEPIANO_KEYS.productos);
     document.getElementById("totalProductos").textContent = productos.length;
-    document.getElementById("totalUsuarios").textContent = obtenerColeccion(NEXO_KEYS.usuarios).length;
-    document.getElementById("totalMensajes").textContent = obtenerColeccion(NEXO_KEYS.contactos).length;
+    document.getElementById("totalUsuarios").textContent = obtenerColeccion(FORTEPIANO_KEYS.usuarios).length;
+    document.getElementById("totalMensajes").textContent = obtenerColeccion(FORTEPIANO_KEYS.contactos).length;
 
     if (sesion.rolId === 2) {
         document.getElementById("cardUsuarios").style.display = "none";

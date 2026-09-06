@@ -2,7 +2,7 @@
    Maneja las colecciones de localStorage (base de datos simulada),
    la sesion del usuario y la barra de navegacion comun a todas las paginas. */
 
-const NEXO_KEYS = {
+const FORTEPIANO_KEYS = {
     usuarios: "forte_usuarios",
     productos: "forte_productos",
     categorias: "forte_categorias",
@@ -26,16 +26,16 @@ function guardarColeccion(clave, datos) {
 /* ---------- Datos iniciales de prueba ---------- */
 
 function inicializarDatos() {
-    if (!localStorage.getItem(NEXO_KEYS.roles)) {
-        guardarColeccion(NEXO_KEYS.roles, [
+    if (!localStorage.getItem(FORTEPIANO_KEYS.roles)) {
+        guardarColeccion(FORTEPIANO_KEYS.roles, [
             { id: 1, nombre: "Administrador" },
             { id: 2, nombre: "Vendedor" },
             { id: 3, nombre: "Cliente" }
         ]);
     }
 
-    if (!localStorage.getItem(NEXO_KEYS.categorias)) {
-        guardarColeccion(NEXO_KEYS.categorias, [
+    if (!localStorage.getItem(FORTEPIANO_KEYS.categorias)) {
+        guardarColeccion(FORTEPIANO_KEYS.categorias, [
             { id: 1, nombre: "Pianos Acusticos" },
             { id: 2, nombre: "Pianos Digitales" },
             { id: 3, nombre: "Sintetizadores" },
@@ -45,16 +45,16 @@ function inicializarDatos() {
         ]);
     }
 
-    if (!localStorage.getItem(NEXO_KEYS.regiones)) {
-        guardarColeccion(NEXO_KEYS.regiones, [
+    if (!localStorage.getItem(FORTEPIANO_KEYS.regiones)) {
+        guardarColeccion(FORTEPIANO_KEYS.regiones, [
             { id: 1, nombre: "Region Metropolitana" },
             { id: 2, nombre: "Valparaiso" },
             { id: 3, nombre: "Biobio" }
         ]);
     }
 
-    if (!localStorage.getItem(NEXO_KEYS.comunas)) {
-        guardarColeccion(NEXO_KEYS.comunas, [
+    if (!localStorage.getItem(FORTEPIANO_KEYS.comunas)) {
+        guardarColeccion(FORTEPIANO_KEYS.comunas, [
             { id: 1, regionId: 1, nombre: "Santiago" },
             { id: 2, regionId: 1, nombre: "Providencia" },
             { id: 3, regionId: 1, nombre: "Maipu" },
@@ -65,8 +65,8 @@ function inicializarDatos() {
         ]);
     }
 
-    if (!localStorage.getItem(NEXO_KEYS.usuarios)) {
-        guardarColeccion(NEXO_KEYS.usuarios, [
+    if (!localStorage.getItem(FORTEPIANO_KEYS.usuarios)) {
+        guardarColeccion(FORTEPIANO_KEYS.usuarios, [
             {
                 run: "123456785", nombre: "Admin", apellidos: "Forte",
                 correo: "admin@gmail.com", password: "admin123",
@@ -98,53 +98,58 @@ function inicializarDatos() {
         ]);
     }
 
-    if (!localStorage.getItem(NEXO_KEYS.productos)) {
-        guardarColeccion(NEXO_KEYS.productos, [
+    if (!localStorage.getItem(FORTEPIANO_KEYS.productos)) {
+        guardarColeccion(FORTEPIANO_KEYS.productos, [
             { codigo: "AC-005", nombre: "Soporte de Teclado Tijera", descripcion: "Atril de metal resistente con altura ajustable, compatible con la mayoría de pianos digitales y teclados.", precio: 17990, stock: 10, stockCritico: 3, categoriaId: 4, imagen: "productos/soporte.svg", estado: "Activo" },
             { codigo: "PD-006", nombre: "Roland FP-30X", descripcion: "Piano digital portátil de gran rendimiento con motor de sonido SuperNATURAL y conexión Bluetooth.", precio: 699990, stock: 25, stockCritico: 5, categoriaId: 2, imagen: "productos/roland-fp30x.svg", estado: "Activo" },
-            { codigo: "AD-001", nombre: "Funda impermeable", descripcion: "Funda acolchada para proteger tu piano del polvo y la humedad.", precio: 25000, stock: 15, stockCritico: 4, categoriaId: 4, imagen: "productos/funda.svg", estado: "Activo" }
-
-
-
-
-
+            { codigo: "AD-001", nombre: "Funda impermeable", descripcion: "Funda acolchada para proteger tu piano del polvo y la humedad.", precio: 25000, stock: 15, stockCritico: 4, categoriaId: 4, imagen: "productos/funda.svg", estado: "Activo" },
+            { codigo: "PA-001", nombre: "Piano Yamaha U1", descripcion: "Piano acústico vertical de alta calidad, ideal para estudiantes avanzados y profesionales.", precio: 3299000, stock: 5, stockCritico: 2, categoriaId: 1, imagen: "productos/yamaha-u1.svg", estado: "Activo" },
+            { codigo: "PD-001", nombre: "Yamaha P-45", descripcion: "Piano digital de entrada con 88 teclas contrapesadas y tecnología Pure CF Sampling.", precio: 459990, stock: 30, stockCritico: 5, categoriaId: 2, imagen: "productos/yamaha-p45.svg", estado: "Activo" },
+            { codigo: "AD-002", nombre: "Banco de piano acolchado", descripcion: "Banco ajustable en altura con asiento acolchado para mayor comodidad.", precio: 45000, stock: 20, stockCritico: 4, categoriaId: 4, imagen: "productos/banco.svg", estado: "Activo" },
+            { codigo: "AC-001", nombre: "Atril de partituras", descripcion: "Atril plegable de metal con altura ajustable.", precio: 12990, stock: 15, stockCritico: 3, categoriaId: 4, imagen: "productos/atril.svg", estado: "Activo" },
+            { codigo: "SY-001", nombre: "Sintetizador Korg Volca FM", descripcion: "Sintetizador FM compacto con 61 teclas y 32 voces de polifonía.", precio: 189990, stock: 12, stockCritico: 3, categoriaId: 3, imagen: "productos/volca-fm.svg", estado: "Activo" },
+            { codigo: "AD-003", nombre: "Pedal de sustain", descripcion: "Pedal conmutable conmutable para pianos digitales.", precio: 15000, stock: 25, stockCritico: 5, categoriaId: 4, imagen: "productos/pedal.svg", estado: "Activo" },
+            { codigo: "PA-002", nombre: "Piano Kawai K-300", descripcion: "Piano vertical profesional con acción Millennium III y sistema Silent opcional.", precio: 4599000, stock: 3, stockCritico: 1, categoriaId: 1, imagen: "productos/kawai-k300.svg", estado: "Activo" },
+            { codigo: "PD-002", nombre: "Casio PX-770", descripcion: "Piano digital de mueble con 88 teclas contrapesadas y tecnología AiR Sound.", precio: 659990, stock: 18, stockCritico: 4, categoriaId: 2, imagen: "productos/casio-px770.svg", estado: "Activo" },
+            { codigo: "AM-001", nombre: "Amplificador Marshall MG10", descripcion: "Amplificador de práctica de 10W con dos canales y efectos integrados.", precio: 129990, stock: 8, stockCritico: 2, categoriaId: 5, imagen: "productos/marshall-mg10.svg", estado: "Activo" },
+            { codigo: "PA-003", nombre: "Piano Steinway & Sons Model O", descripcion: "Piano de cola de concierto con sonido rico y resonancia excepcional.", precio: 32499000, stock: 1, stockCritico: 1, categoriaId: 1, imagen: "productos/steinway-model-o.svg", estado: "Activo" }
         ]);
     }
 
-    if (!localStorage.getItem(NEXO_KEYS.blog)) {
-        guardarColeccion(NEXO_KEYS.blog, [
+    if (!localStorage.getItem(FORTEPIANO_KEYS.blog)) {
+        guardarColeccion(FORTEPIANO_KEYS.blog, [
             { id: 1, titulo: "Forte & Piano abre sus puertas", resumen: "Nace una nueva tienda online pensada por y para los pianistas y músicos de Chile.", imagen: "blog/apertura.svg", fecha: "2026-08-01", slug: "detalle-1" },
             { id: 2, titulo: "Cuidando tu piano acústico", resumen: "Consejos clave sobre humedad, temperatura y afinación para mantener tu piano en perfecto estado.", imagen: "blog/cuidados.svg", fecha: "2026-08-10", slug: "detalle-2" },
             { id: 3, titulo: "5 curiosidades sobre los pianos", resumen: "Datos interesantes que quizás no conocías sobre el rey de los instrumentos musicales.", imagen: "blog/curiosidades.svg", fecha: "2026-08-20", slug: "detalle-1" }
         ]);
     }
 
-    if (!localStorage.getItem(NEXO_KEYS.carrito)) {
-        guardarColeccion(NEXO_KEYS.carrito, []);
+    if (!localStorage.getItem(FORTEPIANO_KEYS.carrito)) {
+        guardarColeccion(FORTEPIANO_KEYS.carrito, []);
     }
 
-    if (!localStorage.getItem(NEXO_KEYS.contactos)) {
-        guardarColeccion(NEXO_KEYS.contactos, []);
+    if (!localStorage.getItem(FORTEPIANO_KEYS.contactos)) {
+        guardarColeccion(FORTEPIANO_KEYS.contactos, []);
     }
 }
 
 /* ---------- Sesion ---------- */
 
 function obtenerSesion() {
-    return JSON.parse(localStorage.getItem(NEXO_KEYS.sesion)) || null;
+    return JSON.parse(localStorage.getItem(FORTEPIANO_KEYS.sesion)) || null;
 }
 
 function guardarSesion(usuario) {
-    localStorage.setItem(NEXO_KEYS.sesion, JSON.stringify(usuario));
+    localStorage.setItem(FORTEPIANO_KEYS.sesion, JSON.stringify(usuario));
 }
 
 function cerrarSesion() {
-    localStorage.removeItem(NEXO_KEYS.sesion);
+    localStorage.removeItem(FORTEPIANO_KEYS.sesion);
     window.location.href = "/login";
 }
 
 function obtenerNombreRol(rolId) {
-    const rol = obtenerColeccion(NEXO_KEYS.roles).find(function (r) { return r.id === rolId; });
+    const rol = obtenerColeccion(FORTEPIANO_KEYS.roles).find(function (r) { return r.id === rolId; });
     return rol ? rol.nombre : "";
 }
 
@@ -201,7 +206,7 @@ function actualizarNavbar() {
 /* ---------- Badge del carrito ---------- */
 
 function actualizarBadgeCarrito() {
-    const carrito = obtenerColeccion(NEXO_KEYS.carrito);
+    const carrito = obtenerColeccion(FORTEPIANO_KEYS.carrito);
     let totalItems = 0;
     for (let i = 0; i < carrito.length; i++) {
         totalItems += carrito[i].cantidad;

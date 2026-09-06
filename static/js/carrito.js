@@ -2,11 +2,11 @@
    Manejo del carrito de compras usando localStorage. */
 
 function obtenerCarrito() {
-    return obtenerColeccion(NEXO_KEYS.carrito);
+    return obtenerColeccion(FORTEPIANO_KEYS.carrito);
 }
 
 function guardarCarrito(carrito) {
-    guardarColeccion(NEXO_KEYS.carrito, carrito);
+    guardarColeccion(FORTEPIANO_KEYS.carrito, carrito);
 }
 
 /* Agrega un producto al carrito respetando el stock disponible. */

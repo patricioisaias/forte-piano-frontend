@@ -2,7 +2,7 @@
    Logica de catalogo, detalle de producto y mantenedor administrativo de productos. */
 
 function obtenerProductos() {
-    return obtenerColeccion(NEXO_KEYS.productos);
+    return obtenerColeccion(FORTEPIANO_KEYS.productos);
 }
 
 function obtenerProductoPorCodigo(codigo) {
@@ -10,7 +10,7 @@ function obtenerProductoPorCodigo(codigo) {
 }
 
 function obtenerNombreCategoria(categoriaId) {
-    const categoria = obtenerColeccion(NEXO_KEYS.categorias).find(function (c) { return c.id === Number(categoriaId); });
+    const categoria = obtenerColeccion(FORTEPIANO_KEYS.categorias).find(function (c) { return c.id === Number(categoriaId); });
     return categoria ? categoria.nombre : "Sin categoria";
 }
 
@@ -85,7 +85,7 @@ function mostrarCatalogo(idContenedor, texto, categoriaId) {
 function llenarSelectCategorias(idSelect, incluirTodas) {
     const select = document.getElementById(idSelect);
     if (!select) return;
-    const categorias = obtenerColeccion(NEXO_KEYS.categorias);
+    const categorias = obtenerColeccion(FORTEPIANO_KEYS.categorias);
 
     select.innerHTML = "";
     if (incluirTodas) {
@@ -148,12 +148,12 @@ function guardarProducto(producto) {
     } else {
         productos[indice] = producto;
     }
-    guardarColeccion(NEXO_KEYS.productos, productos);
+    guardarColeccion(FORTEPIANO_KEYS.productos, productos);
 }
 
 function eliminarProducto(codigo) {
     const productos = obtenerProductos().filter(function (p) { return p.codigo !== codigo; });
-    guardarColeccion(NEXO_KEYS.productos, productos);
+    guardarColeccion(FORTEPIANO_KEYS.productos, productos);
 }
 
 function cargarTablaProductosAdmin() {
