@@ -3,16 +3,16 @@
    la sesion del usuario y la barra de navegacion comun a todas las paginas. */
 
 const FORTEPIANO_KEYS = {
-    usuarios: "forte_usuarios",
-    productos: "forte_productos",
-    categorias: "forte_categorias",
-    regiones: "forte_regiones",
-    comunas: "forte_comunas",
-    roles: "forte_roles",
-    carrito: "forte_carrito",
-    contactos: "forte_contactos",
-    blog: "forte_blog",
-    sesion: "forte_sesion"
+    usuarios: "fortepiano_usuarios",
+    productos: "fortepiano_productos",
+    categorias: "fortepiano_categorias",
+    regiones: "fortepiano_regiones",
+    comunas: "fortepiano_comunas",
+    roles: "fortepiano_roles",
+    carrito: "fortepiano_carrito",
+    contactos: "fortepiano_contactos",
+    blog: "fortepiano_blog",
+    sesion: "fortepiano_sesion"
 };
 
 function obtenerColeccion(clave) {
