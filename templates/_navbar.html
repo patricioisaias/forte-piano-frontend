@@ -4,6 +4,9 @@
             <a class="navbar-brand d-flex align-items-center gap-2" href="{{ url_for('home') }}">
                 <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo Forte & Piano" height="38">
             </a>
+            <a class="navbar-brand d-flex gap-2 brand-text" href="{{ url_for('home') }}">
+                Forte & Piano
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
                 aria-controls="navMenu" aria-label="Abrir menu">
                 <span class="navbar-toggler-icon"></span>
@@ -12,6 +15,7 @@
                 <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                     <li class="nav-item"><a class="nav-link" href="{{ url_for('home') }}">Inicio</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ url_for('productos') }}">Catálogo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('servicios') }}">Servicios</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ url_for('blog') }}">Blog</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ url_for('nosotros') }}">Nosotros</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ url_for('contacto') }}">Contacto</a></li>

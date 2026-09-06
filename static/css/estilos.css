@@ -248,3 +248,14 @@ table.dataTable {
     --bs-accordion-active-color: var(--forte-gold);
     --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem rgba(197, 160, 89, 0.25);
 }
+
+/* Global Text Color Fixes */
+p, span, div, h1, h2, h3, h4, h5, h6, .card-text, .card-title, .accordion-body {
+    color: var(--forte-text);
+}
+.text-muted {
+    color: var(--forte-text-muted) !important;
+}
+.carousel-caption h1, .carousel-caption p {
+    color: #ffffff !important;
+}

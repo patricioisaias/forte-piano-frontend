@@ -82,5 +82,10 @@ def admin_usuario_form():
     return render_template("admin-usuario-form.html")
 
 
+@app.route("/servicios")
+def servicios():
+    return render_template("servicios.html")
+
+
 if __name__ == "__main__":
     app.run(debug=True)
