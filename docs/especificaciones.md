@@ -229,14 +229,14 @@ Los datos deberán almacenarse como JSON.
 Ejemplo:
 
 ```javascript
-localStorage.setItem("forte_productos", JSON.stringify(productos));
+localStorage.setItem("fortepiano_productos", JSON.stringify(productos));
 ```
 
 Para recuperar información:
 
 ```javascript
 const productos =
-    JSON.parse(localStorage.getItem("forte_productos")) || [];
+    JSON.parse(localStorage.getItem("fortepiano_productos")) || [];
 ```
 
 ---
@@ -247,15 +247,15 @@ Como mínimo se recomienda manejar las siguientes claves:
 
 | Clave | Información |
 |---|---|
-| `forte_usuarios` | Usuarios registrados |
-| `forte_productos` | Instrumentos y Accesorios |
-| `forte_categorias` | Categorías de instrumentos musicales |
-| `forte_regiones` | Regiones |
-| `forte_comunas` | Comunas |
-| `forte_roles` | Roles del sistema |
-| `forte_carrito` | Carrito de compras |
-| `forte_contactos` | Mensajes enviados |
-| `forte_blog` | Noticias o publicaciones |
+| `fortepiano_usuarios` | Usuarios registrados |
+| `fortepiano_productos` | Instrumentos y Accesorios |
+| `fortepiano_categorias` | Categorías de instrumentos musicales |
+| `fortepiano_regiones` | Regiones |
+| `fortepiano_comunas` | Comunas |
+| `fortepiano_roles` | Roles del sistema |
+| `fortepiano_carrito` | Carrito de compras |
+| `fortepiano_contactos` | Mensajes enviados |
+| `fortepiano_blog` | Noticias o publicaciones |
 
 ---
 
@@ -501,7 +501,7 @@ Controles recomendados:
 - Mensajes de validación.
 - SweetAlert2.
 
-Los datos deben validarse con JavaScript y guardarse en `forte_usuarios`.
+Los datos deben validarse con JavaScript y guardarse en `fortepiano_usuarios`.
 
 ---
 
@@ -612,7 +612,7 @@ Se debe usar:
 - Buttons.
 - SweetAlert2.
 
-JavaScript debe validar los datos y guardar el mensaje en `forte_contactos`.
+JavaScript debe validar los datos y guardar el mensaje en `fortepiano_contactos`.
 
 ---
 
@@ -620,7 +620,7 @@ JavaScript debe validar los datos y guardar el mensaje en `forte_contactos`.
 
 Muestra todos los instrumentos musicales disponibles.
 
-Los productos deben obtenerse desde `forte_productos`.
+Los productos deben obtenerse desde `fortepiano_productos`.
 
 Cada instrumento debe mostrar como mínimo:
 
@@ -672,7 +672,7 @@ Debe permitir:
 El carrito debe guardarse en:
 
 ```text
-forte_carrito
+fortepiano_carrito
 ```
 
 Se pueden utilizar:
@@ -808,7 +808,7 @@ Debe mostrarse una alerta cuando el stock sea igual o inferior al stock crítico
 
 - Opcional.
 
-Los datos se deben guardar o actualizar en `forte_productos`.
+Los datos se deben guardar o actualizar en `fortepiano_productos`.
 
 ---
 
@@ -917,7 +917,7 @@ Al cambiar la región, se deben mostrar solamente las comunas correspondientes.
 - Requerida.
 - Máximo 300 caracteres.
 
-Los usuarios se deben almacenar en `forte_usuarios`.
+Los usuarios se deben almacenar en `fortepiano_usuarios`.
 
 ---
 
@@ -989,7 +989,7 @@ Los mensajes importantes deben mostrarse con SweetAlert2.
 - Requerido.
 - Máximo 500 caracteres.
 
-El mensaje debe guardarse en `forte_contactos`.
+El mensaje debe guardarse en `fortepiano_contactos`.
 
 ---
 
