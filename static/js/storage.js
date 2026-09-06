@@ -36,13 +36,12 @@ function inicializarDatos() {
 
     if (!localStorage.getItem(NEXO_KEYS.categorias)) {
         guardarColeccion(NEXO_KEYS.categorias, [
-            { id: 1, nombre: "Accion" },
+            { id: 1, nombre: "Pianos Acusticos" },
             { id: 2, nombre: "Pianos Digitales" },
             { id: 3, nombre: "Sintetizadores" },
             { id: 4, nombre: "Accesorios" },
             { id: 5, nombre: "Amplificadores" },
-            { id: 6, nombre: "Indie" },
-            { id: 7, nombre: "Terror" }
+            { id: 6, nombre: "Partituras" }
         ]);
     }
 
@@ -101,22 +100,22 @@ function inicializarDatos() {
 
     if (!localStorage.getItem(NEXO_KEYS.productos)) {
         guardarColeccion(NEXO_KEYS.productos, [
-            { codigo: "NG-001", nombre: "Star Quest Odyssey", descripcion: "Un extenso RPG espacial donde exploras galaxias, formas tu tripulacion y enfrentas antiguas amenazas cosmicas.", precio: 29990, stock: 15, stockCritico: 3, categoriaId: 3, imagen: "productos/star-quest.svg", estado: "Activo" },
-            { codigo: "NG-002", nombre: "Turbo Rally Extreme", descripcion: "Carreras arcade a toda velocidad con circuitos extremos y personalizacion completa de vehiculos.", precio: 24990, stock: 20, stockCritico: 5, categoriaId: 4, imagen: "productos/turbo-rally.svg", estado: "Activo" },
-            { codigo: "NG-003", nombre: "Shadow Realm Tactics", descripcion: "Estrategia por turnos en un reino de sombras donde cada decision cambia el destino del ejercito.", precio: 19990, stock: 8, stockCritico: 2, categoriaId: 5, imagen: "productos/shadow-realm.svg", estado: "Activo" },
-            { codigo: "NG-004", nombre: "Neon Strike Force", descripcion: "Accion frenetica en una ciudad cyberpunk, combate cuerpo a cuerpo y armas futuristas.", precio: 34990, stock: 12, stockCritico: 4, categoriaId: 1, imagen: "productos/neon-strike.svg", estado: "Activo" },
-            { codigo: "NG-005", nombre: "Soporte de Teclado Tijera", descripcion: "Aventura narrativa y exploracion en un bosque encantado lleno de secretos por descubrir.", precio: 17990, stock: 10, stockCritico: 3, categoriaId: 2, imagen: "productos/whispering-woods.svg", estado: "Activo" },
-            { codigo: "NG-006", nombre: "Roland FP-30X", descripcion: "Un plataformero indie retro con caballeros pixelados y niveles cooperativos.", precio: 9990, stock: 25, stockCritico: 5, categoriaId: 6, imagen: "productos/pixel-knights.svg", estado: "Activo" },
-            { codigo: "NG-007", nombre: "Galactic Siege Commander", descripcion: "Gestiona flotas, recursos y alianzas en este instrumento de estrategia espacial masivo.", precio: 27990, stock: 2, stockCritico: 3, categoriaId: 5, imagen: "productos/galactic-siege.svg", estado: "Activo" },
-            { codigo: "NG-008", nombre: "Midnight Horror House", descripcion: "Sobrevive una noche en una mansion embrujada llena de acertijos y criaturas aterradoras.", precio: 22990, stock: 6, stockCritico: 2, categoriaId: 7, imagen: "productos/midnight-horror.svg", estado: "Activo" }
+            { codigo: "AC-005", nombre: "Soporte de Teclado Tijera", descripcion: "Atril de metal resistente con altura ajustable, compatible con la mayoría de pianos digitales y teclados.", precio: 17990, stock: 10, stockCritico: 3, categoriaId: 4, imagen: "productos/soporte.svg", estado: "Activo" },
+            { codigo: "PD-006", nombre: "Roland FP-30X", descripcion: "Piano digital portátil de gran rendimiento con motor de sonido SuperNATURAL y conexión Bluetooth.", precio: 699990, stock: 25, stockCritico: 5, categoriaId: 2, imagen: "productos/roland-fp30x.svg", estado: "Activo" },
+            { codigo: "AD-001", nombre: "Funda impermeable", descripcion: "Funda acolchada para proteger tu piano del polvo y la humedad.", precio: 25000, stock: 15, stockCritico: 4, categoriaId: 4, imagen: "productos/funda.svg", estado: "Activo" }
+
+
+
+
+
         ]);
     }
 
     if (!localStorage.getItem(NEXO_KEYS.blog)) {
         guardarColeccion(NEXO_KEYS.blog, [
-            { id: 1, titulo: "Forte & Piano abre sus puertas", resumen: "Nace una nueva tienda online pensada por y para la comunidad músico de Chile.", imagen: "blog/apertura.svg", fecha: "2026-08-01", slug: "detalle-1" },
-            { id: 2, titulo: "Los lanzamientos mas esperados del ano", resumen: "Repasamos los titulos que marcaran tendencia en los proximos meses.", imagen: "blog/lanzamientos.svg", fecha: "2026-08-10", slug: "detalle-2" },
-            { id: 3, titulo: "5 curiosidades del mundo músico", resumen: "Datos curiosos que quizas no conocias sobre la industria de los productos.", imagen: "blog/curiosidades.svg", fecha: "2026-08-20", slug: "detalle-1" }
+            { id: 1, titulo: "Forte & Piano abre sus puertas", resumen: "Nace una nueva tienda online pensada por y para los pianistas y músicos de Chile.", imagen: "blog/apertura.svg", fecha: "2026-08-01", slug: "detalle-1" },
+            { id: 2, titulo: "Cuidando tu piano acústico", resumen: "Consejos clave sobre humedad, temperatura y afinación para mantener tu piano en perfecto estado.", imagen: "blog/cuidados.svg", fecha: "2026-08-10", slug: "detalle-2" },
+            { id: 3, titulo: "5 curiosidades sobre los pianos", resumen: "Datos interesantes que quizás no conocías sobre el rey de los instrumentos musicales.", imagen: "blog/curiosidades.svg", fecha: "2026-08-20", slug: "detalle-1" }
         ]);
     }
 
