@@ -2,7 +2,7 @@
    Renderiza el listado de noticias desde localStorage. */
 
 function obtenerNoticias() {
-    return obtenerColeccion(NEXO_KEYS.blog);
+    return obtenerColeccion(FORTEPIANO_KEYS.blog);
 }
 
 function crearTarjetaNoticia(noticia) {

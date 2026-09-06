@@ -48,9 +48,9 @@ function procesarContacto() {
         fecha: new Date().toISOString().slice(0, 10)
     };
 
-    const contactos = obtenerColeccion(NEXO_KEYS.contactos);
+    const contactos = obtenerColeccion(FORTEPIANO_KEYS.contactos);
     contactos.push(mensaje);
-    guardarColeccion(NEXO_KEYS.contactos, contactos);
+    guardarColeccion(FORTEPIANO_KEYS.contactos, contactos);
 
     Swal.fire("Mensaje enviado", "Gracias por escribirnos, te responderemos pronto.", "success");
     document.getElementById("formularioContacto").reset();

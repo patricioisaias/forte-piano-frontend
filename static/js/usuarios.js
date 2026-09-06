@@ -2,7 +2,7 @@
    Logica de registro, login y mantenedor administrativo de usuarios. */
 
 function obtenerUsuarios() {
-    return obtenerColeccion(NEXO_KEYS.usuarios);
+    return obtenerColeccion(FORTEPIANO_KEYS.usuarios);
 }
 
 function obtenerUsuarioPorRun(run) {
@@ -10,19 +10,19 @@ function obtenerUsuarioPorRun(run) {
 }
 
 function obtenerNombreRegion(regionId) {
-    const region = obtenerColeccion(NEXO_KEYS.regiones).find(function (r) { return r.id === Number(regionId); });
+    const region = obtenerColeccion(FORTEPIANO_KEYS.regiones).find(function (r) { return r.id === Number(regionId); });
     return region ? region.nombre : "-";
 }
 
 function obtenerNombreComuna(comunaId) {
-    const comuna = obtenerColeccion(NEXO_KEYS.comunas).find(function (c) { return c.id === Number(comunaId); });
+    const comuna = obtenerColeccion(FORTEPIANO_KEYS.comunas).find(function (c) { return c.id === Number(comunaId); });
     return comuna ? comuna.nombre : "-";
 }
 
 function llenarSelectRegiones(idSelect) {
     const select = document.getElementById(idSelect);
     if (!select) return;
-    const regiones = obtenerColeccion(NEXO_KEYS.regiones);
+    const regiones = obtenerColeccion(FORTEPIANO_KEYS.regiones);
     select.innerHTML = '<option value="">Seleccione una region</option>';
     regiones.forEach(function (region) {
         select.innerHTML += '<option value="' + region.id + '">' + region.nombre + '</option>';
@@ -36,7 +36,7 @@ function llenarSelectComunas(idSelectRegion, idSelectComuna, comunaSeleccionada)
     if (!selectRegion || !selectComuna) return;
 
     const regionId = Number(selectRegion.value);
-    const comunas = obtenerColeccion(NEXO_KEYS.comunas).filter(function (c) { return c.regionId === regionId; });
+    const comunas = obtenerColeccion(FORTEPIANO_KEYS.comunas).filter(function (c) { return c.regionId === regionId; });
 
     selectComuna.innerHTML = '<option value="">Seleccione una comuna</option>';
     comunas.forEach(function (comuna) {
@@ -159,7 +159,7 @@ function procesarRegistro() {
 
     const usuarios = obtenerUsuarios();
     usuarios.push(nuevoUsuario);
-    guardarColeccion(NEXO_KEYS.usuarios, usuarios);
+    guardarColeccion(FORTEPIANO_KEYS.usuarios, usuarios);
 
     Swal.fire("Correcto", "Usuario registrado correctamente.", "success").then(function () {
         window.location.href = "/login";
@@ -241,12 +241,12 @@ function guardarUsuario(usuario) {
     } else {
         usuarios[indice] = usuario;
     }
-    guardarColeccion(NEXO_KEYS.usuarios, usuarios);
+    guardarColeccion(FORTEPIANO_KEYS.usuarios, usuarios);
 }
 
 function eliminarUsuario(run) {
     const usuarios = obtenerUsuarios().filter(function (u) { return u.run !== run; });
-    guardarColeccion(NEXO_KEYS.usuarios, usuarios);
+    guardarColeccion(FORTEPIANO_KEYS.usuarios, usuarios);
 }
 
 function cargarTablaUsuariosAdmin() {
@@ -318,7 +318,7 @@ function confirmarEliminarUsuario(run) {
 function llenarSelectRoles(idSelect) {
     const select = document.getElementById(idSelect);
     if (!select) return;
-    const roles = obtenerColeccion(NEXO_KEYS.roles);
+    const roles = obtenerColeccion(FORTEPIANO_KEYS.roles);
     select.innerHTML = '<option value="">Seleccione un tipo de usuario</option>';
     roles.forEach(function (rol) {
         select.innerHTML += '<option value="' + rol.id + '">' + rol.nombre + '</option>';
