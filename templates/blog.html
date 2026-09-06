@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Blog Gaming - Forte & Piano{% endblock %}
+
+{% block content %}
+<section class="container py-5">
+    <h1 class="section-title">Blog Gaming</h1>
+    <p class="text-muted mb-4">Novedades, lanzamientos y curiosidades del mundo de los videojuegos.</p>
+    <div class="row g-4" id="blogContenedor"></div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/blog.js') }}"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    mostrarNoticias("blogContenedor", null);
+});
+</script>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Los lanzamientos mas esperados del ano - Blog{% endblock %}
+
+{% block content %}
+<article class="container py-5" style="max-width: 800px;">
+    <img src="{{ url_for('static', filename='img/blog/lanzamientos.svg') }}" class="img-fluid rounded mb-4" alt="Los lanzamientos mas esperados del ano">
+    <p class="text-muted small mb-1">10 de agosto, 2026</p>
+    <h1 class="mb-4">Los lanzamientos mas esperados del ano</h1>
+    <p>
+        El calendario de videojuegos de este ano viene cargado de estrenos para todos los gustos:
+        titulos de accion frenetica, aventuras narrativas, RPG expansivos y propuestas indie que
+        prometen sorprender a la comunidad.
+    </p>
+    <p>
+        Entre los mas esperados destacan las nuevas entregas de estrategia espacial, los shooters
+        cyberpunk con mundos abiertos y las aventuras cooperativas pensadas para jugar en equipo.
+        En Forte & Piano iremos sumando estos titulos a nuestro catalogo apenas esten disponibles.
+    </p>
+    <p>
+        Mantente atento al blog y a nuestras redes sociales para no perderte ninguna novedad ni
+        oferta de lanzamiento.
+    </p>
+    <a href="{{ url_for('blog') }}" class="btn btn-accent mt-3"><i class="bi bi-arrow-left"></i> Volver al Blog</a>
+</article>
+{% endblock %}
