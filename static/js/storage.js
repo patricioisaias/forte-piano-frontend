@@ -188,7 +188,7 @@ function actualizarNavbar() {
             navAdminItem.style.display = "block";
         }
     } else {
-        navInvitado.style.display = "flex";
+        navInvitado.style.display = "block";
         navUsuario.style.display = "none";
         if (navAdminItem) navAdminItem.style.display = "none";
     }
@@ -248,5 +248,32 @@ document.addEventListener("DOMContentLoaded", function () {
     inicializarDatos();
     actualizarNavbar();
     actualizarBadgeCarrito();
+    ocultarUsuariosSiVendedor();
     marcarEnlaceActivo();
+
+    // Redireccion automatica al escribir en el buscador de la barra superior
+    const navSearch = document.getElementById("navSearchInput");
+    if (navSearch) {
+        // Pre-llenar si ya estamos en la pagina con una busqueda
+        const urlParams = new URLSearchParams(window.location.search);
+        const q = urlParams.get("q");
+        if (q) {
+            navSearch.value = q;
+        }
+
+        navSearch.addEventListener("input", function() {
+            const val = this.value;
+            if (window.location.pathname !== "/productos" && val.length > 0) {
+                // Si no estamos en el catalogo, redirigir de inmediato
+                window.location.href = "/productos?q=" + encodeURIComponent(val);
+            } else if (window.location.pathname === "/productos") {
+                // Si ya estamos en el catalogo, sincronizar con el buscador principal
+                const buscadorPrincipal = document.getElementById("buscadorProductos");
+                if (buscadorPrincipal) {
+                    buscadorPrincipal.value = val;
+                    buscadorPrincipal.dispatchEvent(new Event("input"));
+                }
+            }
+        });
+    }
 });

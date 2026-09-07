@@ -28,11 +28,22 @@
 document.addEventListener("DOMContentLoaded", function () {
     llenarSelectCategorias("filtroCategoria", true);
 
-    function actualizarCatalogo() {
-        mostrarCatalogo("catalogoContenedor", document.getElementById("buscadorProductos").value, document.getElementById("filtroCategoria").value);
+    const buscador = document.getElementById("buscadorProductos");
+    const urlParams = new URLSearchParams(window.location.search);
+    const q = urlParams.get("q");
+
+    if (q) {
+        buscador.value = q;
+        // Poner el cursor al final para seguir escribiendo
+        buscador.focus();
+        buscador.setSelectionRange(buscador.value.length, buscador.value.length);
     }
 
-    document.getElementById("buscadorProductos").addEventListener("input", actualizarCatalogo);
+    function actualizarCatalogo() {
+        mostrarCatalogo("catalogoContenedor", buscador.value, document.getElementById("filtroCategoria").value);
+    }
+
+    buscador.addEventListener("input", actualizarCatalogo);
     document.getElementById("filtroCategoria").addEventListener("change", actualizarCatalogo);
 
     actualizarCatalogo();

@@ -28,7 +28,8 @@ h2,
 h3,
 h4,
 .brand-text,
-.forte-heading {
+.forte-heading,
+.navbar-nav .nav-link {
     font-family: "Playfair Display", serif;
     letter-spacing: 0.02em;
 }
@@ -231,6 +232,200 @@ table.dataTable {
 }
 
 /* Utility */
+.text-accent {
+    color: var(--forte-gold);
+}
+
+.btn-accent {
+    background: var(--forte-gradient);
+    border: none;
+    color: #111111;
+    font-weight: 600;
+}
+
+.btn-accent:hover {
+    filter: brightness(1.15);
+    color: #111111;
+}
+
+.btn-outline-accent {
+    border: 1px solid var(--forte-gold);
+    color: var(--forte-gold);
+    background: transparent;
+}
+
+.btn-outline-accent:hover {
+    background: var(--forte-gold);
+    color: #111111;
+}
+
+/* Navbar */
+.forte-navbar {
+    background-color: rgba(11, 14, 20, 0.92);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--forte-border);
+}
+
+.forte-navbar .nav-link {
+    color: var(--forte-text-muted);
+    font-weight: 500;
+}
+
+.forte-navbar .nav-link:hover,
+.forte-navbar .nav-link.active {
+    color: var(--forte-gold);
+}
+
+.brand-text {
+    font-weight: 800;
+    color: var(--forte-text);
+}
+
+/* Cards */
+.card {
+    background-color: var(--forte-panel);
+    border: 1px solid var(--forte-border);
+    color: var(--forte-text);
+}
+
+.card-forte-hover {
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.card-forte-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.card-img-top {
+    background-color: #0e1420;
+    object-fit: cover;
+    height: 200px;
+}
+
+/* Hero / Carousel */
+.hero-section {
+    background: radial-gradient(circle at top right, rgba(197, 160, 89, 0.08), transparent 55%),
+        radial-gradient(circle at bottom left, rgba(212, 175, 55, 0.05), transparent 50%),
+        var(--forte-bg-alt);
+    border-bottom: 1px solid var(--forte-border);
+}
+
+.carousel-item img {
+    height: 380px;
+    object-fit: cover;
+    filter: brightness(0.55);
+}
+
+.carousel-caption {
+    text-align: left;
+    left: 5%;
+    right: auto;
+    bottom: 20%;
+}
+
+/* Sections */
+.section-title {
+    border-left: 4px solid var(--forte-gold);
+    padding-left: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+footer.forte-footer {
+    background-color: var(--forte-bg-alt);
+    border-top: 1px solid var(--forte-border);
+    color: var(--forte-text-muted);
+    margin-top: 3rem;
+}
+
+footer.forte-footer a {
+    color: var(--forte-text-muted);
+}
+
+footer.forte-footer a:hover {
+    color: var(--forte-gold);
+}
+
+/* Forms */
+.form-control,
+.form-select {
+    background-color: var(--forte-bg-alt);
+    border: 1px solid var(--forte-border);
+    color: var(--forte-text);
+}
+
+.form-control:focus,
+.form-select:focus {
+    background-color: var(--forte-bg-alt);
+    color: var(--forte-text);
+    border-color: var(--forte-gold);
+    box-shadow: 0 0 0 0.2rem rgba(197, 160, 89, 0.25);
+}
+
+.form-label {
+    color: var(--forte-text-muted);
+    font-weight: 500;
+}
+
+.auth-card {
+    background-color: var(--forte-panel);
+    border: 1px solid var(--forte-border);
+    border-radius: 0.75rem;
+}
+
+/* Admin */
+.admin-sidebar {
+    background-color: var(--forte-bg-alt);
+    border-right: 1px solid var(--forte-border);
+    min-height: calc(100vh - 76px);
+    padding: 1.5rem 1rem;
+}
+
+.admin-sidebar .nav-link,
+.offcanvas .nav-link {
+    color: var(--forte-text-muted);
+    border-radius: 0.5rem;
+    margin-bottom: 0.25rem;
+}
+
+.admin-sidebar .nav-link.active,
+.admin-sidebar .nav-link:hover,
+.offcanvas .nav-link.active,
+.offcanvas .nav-link:hover {
+    background-color: rgba(197, 160, 89, 0.1);
+    color: var(--forte-gold);
+}
+
+.admin-summary-card {
+    border-left: 4px solid var(--forte-gold);
+}
+
+/* Tables */
+table.dataTable {
+    color: var(--forte-text);
+}
+
+.dataTables_wrapper .dataTables_length,
+.dataTables_wrapper .dataTables_filter,
+.dataTables_wrapper .dataTables_info,
+.dataTables_wrapper .dataTables_paginate {
+    color: var(--forte-text-muted);
+}
+
+.stock-critico {
+    color: #e74c3c;
+    font-weight: 600;
+}
+
+/* Cart */
+.cart-qty-btn {
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    line-height: 1;
+}
+
+/* Utility */
 .bg-forte-panel {
     background-color: var(--forte-panel);
     border: 1px solid var(--forte-border);
@@ -239,6 +434,7 @@ table.dataTable {
 .min-vh-70 {
     min-height: 70vh;
 }
+
 /* Accordion */
 .accordion[data-bs-theme="dark"] {
     --bs-accordion-bg: var(--forte-panel);
@@ -258,4 +454,25 @@ p, span, div, h1, h2, h3, h4, h5, h6, .card-text, .card-title, .accordion-body {
 }
 .carousel-caption h1, .carousel-caption p {
     color: #ffffff !important;
+}
+
+/* Fix for input placeholders in dark theme */
+.form-control::placeholder {
+    color: var(--forte-text-muted);
+    opacity: 1;
+}
+
+/* Dropdown styling for dark theme */
+.dropdown-menu {
+    background-color: var(--forte-panel);
+    border-color: var(--forte-border);
+}
+
+.dropdown-item {
+    color: var(--forte-text);
+}
+
+.dropdown-item:hover, .dropdown-item:focus {
+    background-color: rgba(197, 160, 89, 0.1);
+    color: var(--forte-gold);
 }
