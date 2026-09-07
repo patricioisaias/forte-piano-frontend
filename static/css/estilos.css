@@ -259,3 +259,20 @@ p, span, div, h1, h2, h3, h4, h5, h6, .card-text, .card-title, .accordion-body {
 .carousel-caption h1, .carousel-caption p {
     color: #ffffff !important;
 }
+
+/* SweetAlert2 Tema Oscuro */
+.swal2-popup {
+    background-color: var(--forte-panel) !important;
+    color: var(--forte-text) !important;
+    border: 1px solid var(--forte-border) !important;
+}
+.swal2-title {
+    color: var(--forte-gold) !important;
+}
+.swal2-html-container {
+    color: var(--forte-text) !important;
+}
+.swal2-html-container p {
+    color: var(--forte-text) !important;
+}
+
