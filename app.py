@@ -52,6 +52,11 @@ def blog_detalle_2():
     return render_template("blog-detalle-2.html")
 
 
+@app.route("/blog/detalle-3")
+def blog_detalle_3():
+    return render_template("blog-detalle-3.html")
+
+
 @app.route("/contacto")
 def contacto():
     return render_template("contacto.html")
