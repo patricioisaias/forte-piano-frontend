@@ -3,7 +3,8 @@
 
 {% block content %}
 <article class="container py-5" style="max-width: 800px;">
-    <img src="{{ url_for('static', filename='img/blog/lanzamientos.svg') }}" class="img-fluid rounded mb-4" alt="Los lanzamientos mas esperados del ano">
+    <!-- PASO 1: Actualizamos la imagen principal por la nueva imagen JPG generada -->
+    <img src="{{ url_for('static', filename='img/blog/lanzamientos.jpg') }}" class="img-fluid rounded mb-4 shadow" alt="Los lanzamientos mas esperados del ano">
     <p class="text-muted small mb-1">10 de agosto, 2026</p>
     <h1 class="mb-4">Los lanzamientos mas esperados del ano</h1>
     <p>

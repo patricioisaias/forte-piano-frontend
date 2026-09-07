@@ -3,7 +3,8 @@
 
 {% block content %}
 <article class="container py-5" style="max-width: 800px;">
-    <img src="{{ url_for('static', filename='img/blog/apertura.svg') }}" class="img-fluid rounded mb-4" alt="Forte & Piano abre sus puertas">
+    <!-- PASO 1: Cambiamos la imagen principal. Reemplazamos 'apertura.svg' por la nueva imagen 'apertura.jpg' -->
+    <img src="{{ url_for('static', filename='img/blog/apertura.jpg') }}" class="img-fluid rounded mb-4 shadow" alt="Forte & Piano abre sus puertas">
     <p class="text-muted small mb-1">01 de agosto, 2026</p>
     <h1 class="mb-4">Forte & Piano abre sus puertas</h1>
     <p>
@@ -16,6 +17,12 @@
         con toda la informacion que necesitas, y un carrito de compras que recuerda tus productos
         aunque cierres el navegador.
     </p>
+
+    <!-- PASO 2: Agregamos una nueva imagen de apoyo en medio del artículo -->
+    <div class="text-center my-5">
+        <img src="{{ url_for('static', filename='img/blog/lanzamientos.jpg') }}" class="img-fluid rounded shadow-sm" style="max-height: 400px; object-fit: cover; width: 100%;" alt="Nuestra tienda por dentro">
+        <p class="text-muted small mt-2">Visítanos y descubre nuestro amplio catálogo de instrumentos.</p>
+    </div>
     <p>
         Este es solo el comienzo. En las proximas semanas seguiremos sumando titulos, promociones
         y contenido para toda la comunidad. Gracias por ser parte de este lanzamiento.
