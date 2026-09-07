@@ -114,11 +114,14 @@ function inicializarDatos() {
         ]);
     }
 
+    // TEMPORAL: forzar recarga de blog con imagenes reales (borrar despues)
+    localStorage.removeItem(FORTEPIANO_KEYS.blog);
+
     if (!localStorage.getItem(FORTEPIANO_KEYS.blog)) {
         guardarColeccion(FORTEPIANO_KEYS.blog, [
-            { id: 1, titulo: "Forte & Piano abre sus puertas", resumen: "Nace una nueva tienda online pensada por y para los pianistas y músicos de Chile.", imagen: "blog/apertura.svg", fecha: "2026-08-01", slug: "detalle-1" },
-            { id: 2, titulo: "Cuidando tu piano acústico", resumen: "Consejos clave sobre humedad, temperatura y afinación para mantener tu piano en perfecto estado.", imagen: "blog/cuidados.svg", fecha: "2026-08-10", slug: "detalle-2" },
-            { id: 3, titulo: "5 curiosidades sobre los pianos", resumen: "Datos interesantes que quizás no conocías sobre el rey de los instrumentos musicales.", imagen: "blog/curiosidades.svg", fecha: "2026-08-20", slug: "detalle-1" }
+            { id: 1, titulo: "Forte & Piano abre sus puertas", resumen: "Nace una nueva tienda online pensada por y para los pianistas y músicos de Chile.", imagen: "blog/apertura_nueva.jpg", fecha: "2026-08-01", slug: "detalle-1" },
+            { id: 2, titulo: "Cuidando tu piano acústico", resumen: "Consejos clave sobre humedad, temperatura y afinación para mantener tu piano en perfecto estado.", imagen: "blog/banner.jpg", fecha: "2026-08-10", slug: "detalle-2" },
+            { id: 3, titulo: "5 curiosidades sobre los pianos", resumen: "Datos interesantes que quizás no conocías sobre el rey de los instrumentos musicales.", imagen: "blog/piano.webp", fecha: "2026-08-20", slug: "detalle-3" }
         ]);
     }
 
