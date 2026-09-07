@@ -9,6 +9,7 @@
             <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
             <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
             <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="3"></button>
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active">
@@ -22,10 +23,10 @@
             </div>
             <div class="carousel-item">
                 <img src="{{ url_for('static', filename='img/banners/banner-2.png') }}" class="d-block w-100"
-                    alt="Ofertas de lanzamiento">
+                    alt="Ofertas de Primavera - Hasta un 80% Off!">
                 <div class="carousel-caption" style="left: 15%;">
-                    <h1 class="display-6">Ofertas de lanzamiento</h1>
-                    <p class="d-none d-md-block">Precios especiales</p>
+                    <h1 class="display-6">Ofertas de Primavera - Hasta un 80% Off! </h1>
+                    <p class="d-none d-md-block">Precios de Temporada</p>
                     <a href="{{ url_for('productos') }}" class="btn btn-accent">Ver ofertas</a>
                 </div>
             </div>
@@ -36,6 +37,15 @@
                     <h1 class="display-6">¡Aprende a tocar piano con nosotros!</h1>
                     <p class="d-none d-md-block">Academia musical Forte & Piano</p>
                     <a href="{{ url_for('blog') }}" class="btn btn-accent">Ver cursos</a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="{{ url_for('static', filename='img/banners/banner-4.png') }}" class="d-block w-100"
+                    alt="Conciertos de Piano">
+                <div class="carousel-caption" style="left: 15%;">
+                    <h1 class="display-6">Conciertos de Piano</h1>
+                    <p class="d-none d-md-block">Próximos encuentros musicales</p>
+                    <a href="{{ url_for('blog') }}" class="btn btn-accent">Ver Eventos</a>
                 </div>
             </div>
         </div>
@@ -74,8 +84,8 @@
 <script src="{{ url_for('static', filename='js/blog.js') }}"></script>
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-        mostrarProductosDestacados("destacadosContenedor", 4);
-        mostrarNoticias("noticiasContenedor", 3);
+        mostrarProductosDestacados("destacadosContenedor", 5);
+        mostrarNoticias("noticiasContenedor", 4);
     });
 </script>
 {% endblock %}
